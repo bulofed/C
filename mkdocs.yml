@@ -1,0 +1,5 @@
+site_name: C
+nav:
+  - Cours: index.md
+  - Exercices: exercices.md
+theme: readthedocs
