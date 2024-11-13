@@ -1,4 +1,4 @@
-site_name: C
+site_name: Cours C
 nav:
   - Cours: index.md
   - Exercices: exercices.md
