@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>C</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Cours";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> C
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Cours</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des Matières</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#histoire-du-c">Histoire du C</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-dun-compilateur">Installation d'un Compilateur</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntaxe-de-base">Syntaxe de Base</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#explication">Explication</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variables-et-types-de-donnees">Variables et Types de Données</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#operateurs">Opérateurs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structures-de-controle">Structures de Contrôle</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#conditionnelles">Conditionnelles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#boucles">Boucles</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fonctions">Fonctions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tableaux-et-pointeurs">Tableaux et Pointeurs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tableaux">Tableaux</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pointeurs">Pointeurs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-de-la-memoire">Gestion de la Mémoire</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fichiers">Fichiers</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="exercices/">Exercices</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">C</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Cours</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="introduction-au-langage-c">Introduction au Langage C</h1>
+<p>Le langage C est l'un des langages de programmation les plus populaires et les plus puissants. Il est utilisé pour développer des systèmes d'exploitation, des logiciels embarqués, des applications performantes, et bien plus encore.</p>
+<h2 id="table-des-matieres">Table des Matières</h2>
+<ol>
+<li><a href="#histoire-du-c">Histoire du C</a></li>
+<li><a href="#installation-dun-compilateur">Installation d'un Compilateur</a></li>
+<li><a href="#syntaxe-de-base">Syntaxe de Base</a></li>
+<li><a href="#variables-et-types-de-données">Variables et Types de Données</a></li>
+<li><a href="#opérateurs">Opérateurs</a></li>
+<li><a href="#structures-de-contrôle">Structures de Contrôle</a></li>
+<li><a href="#fonctions">Fonctions</a></li>
+<li><a href="#tableaux-et-pointeurs">Tableaux et Pointeurs</a></li>
+<li><a href="#gestion-de-la-mémoire">Gestion de la Mémoire</a></li>
+<li><a href="#fichiers">Fichiers</a></li>
+<li><a href="exercices/">Exercices</a></li>
+</ol>
+<hr />
+<h2 id="histoire-du-c">Histoire du C</h2>
+<p>Le langage C a été développé dans les années 1970 par Dennis Ritchie au Bell Labs. Il a été conçu pour être un langage de programmation de bas niveau, permettant un contrôle précis du matériel, tout en restant suffisamment abstrait pour être portable.</p>
+<h2 id="installation-dun-compilateur">Installation d'un Compilateur</h2>
+<p>Pour écrire et exécuter des programmes en C, vous avez besoin d'un compilateur C. Voici quelques compilateurs populaires :</p>
+<ul>
+<li><strong>GCC</strong> (GNU Compiler Collection)</li>
+<li><strong>Clang</strong></li>
+<li><strong>MSVC</strong> (Microsoft Visual C++ pour Windows)</li>
+</ul>
+<p>Une fois le compilateur installé, vous pouvez créer un fichier avec l'extension <code>.c</code>, l'écrire avec du code C, et le compiler avec la commande :</p>
+<pre><code class="language-bash">gcc mon_programme.c -o mon_programme
+</code></pre>
+<h2 id="syntaxe-de-base">Syntaxe de Base</h2>
+<p>Voici un exemple de programme "Hello, World!" en C :</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    printf(&quot;Hello, World!\n&quot;);
+    return 0;
+}
+</code></pre>
+<h3 id="explication">Explication</h3>
+<ul>
+<li><code>#include &lt;stdio.h&gt;</code> : Inclut la bibliothèque standard d'entrée/sortie pour utiliser <code>printf</code>.</li>
+<li><code>int main()</code> : Fonction principale qui démarre le programme.</li>
+<li><code>printf</code> : Fonction qui affiche du texte à l'écran.</li>
+</ul>
+<h2 id="variables-et-types-de-donnees">Variables et Types de Données</h2>
+<p>En C, les variables doivent être déclarées avec un type. Voici les types de base :</p>
+<ul>
+<li><code>int</code> : Entier (par exemple, <code>int a = 5;</code>)</li>
+<li><code>float</code> : Nombre à virgule flottante (ex. <code>float b = 5.5;</code>)</li>
+<li><code>char</code> : Caractère unique (ex. <code>char c = 'A';</code>)</li>
+</ul>
+<p>Exemple :</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 30;
+    float taille = 1.75;
+    char initial = 'J';
+
+    printf(&quot;Age : %d, Taille : %.2f, Initial : %c\n&quot;, age, taille, initial);
+    return 0;
+}
+</code></pre>
+<h2 id="operateurs">Opérateurs</h2>
+<p>Les opérateurs en C incluent :</p>
+<ul>
+<li>Opérateurs arithmétiques : <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+<li>Opérateurs de comparaison : <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+<li>Opérateurs logiques : <code>&amp;&amp;</code>, <code>||</code>, <code>!</code></li>
+</ul>
+<p>Exemple :</p>
+<pre><code class="language-c">int a = 10, b = 5;
+int somme = a + b;
+int egal = (a == b);
+</code></pre>
+<h2 id="structures-de-controle">Structures de Contrôle</h2>
+<h3 id="conditionnelles">Conditionnelles</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 20;
+
+    if (age &gt;= 18) {
+        printf(&quot;Vous êtes majeur.\n&quot;);
+    } else {
+        printf(&quot;Vous êtes mineur.\n&quot;);
+    }
+
+    return 0;
+}
+</code></pre>
+<h3 id="boucles">Boucles</h3>
+<ul>
+<li><strong>while</strong> : Répète une action tant qu'une condition est vraie.</li>
+<li><strong>for</strong> : Répète une action pour un nombre défini d'itérations.</li>
+</ul>
+<p>Exemple de boucle <code>for</code> :</p>
+<pre><code class="language-c">for (int i = 0; i &lt; 5; i++) {
+    printf(&quot;i vaut %d\n&quot;, i);
+}
+</code></pre>
+<h2 id="fonctions">Fonctions</h2>
+<p>Les fonctions permettent de structurer le code.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int addition(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int resultat = addition(5, 3);
+    printf(&quot;Le résultat est %d\n&quot;, resultat);
+    return 0;
+}
+</code></pre>
+<h2 id="tableaux-et-pointeurs">Tableaux et Pointeurs</h2>
+<h3 id="tableaux">Tableaux</h3>
+<p>Un tableau est une collection de variables de même type.</p>
+<pre><code class="language-c">int nombres[5] = {1, 2, 3, 4, 5};
+printf(&quot;Premier élément : %d\n&quot;, nombres[0]);
+</code></pre>
+<h3 id="pointeurs">Pointeurs</h3>
+<p>Les pointeurs sont des variables qui stockent des adresses mémoire.</p>
+<pre><code class="language-c">int a = 5;
+int *p = &amp;a;
+printf(&quot;La valeur de a est %d\n&quot;, *p);
+</code></pre>
+<h2 id="gestion-de-la-memoire">Gestion de la Mémoire</h2>
+<p>En C, vous pouvez allouer et libérer manuellement de la mémoire avec <code>malloc</code> et <code>free</code>.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int *ptr = malloc(sizeof(int));
+    *ptr = 42;
+    printf(&quot;Valeur : %d\n&quot;, *ptr);
+    free(ptr); // Libère la mémoire
+    return 0;
+}
+</code></pre>
+<h2 id="fichiers">Fichiers</h2>
+<p>Le C permet la manipulation de fichiers avec des fonctions comme <code>fopen</code>, <code>fprintf</code>, <code>fscanf</code>, etc.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *fichier = fopen(&quot;test.txt&quot;, &quot;w&quot;);
+    if (fichier != NULL) {
+        fprintf(fichier, &quot;Bonjour, fichier !&quot;);
+        fclose(fichier);
+    }
+    return 0;
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="exercices/" class="btn btn-neutral float-right" title="Exercices">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="exercices/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2024-11-13 09:44:45.813415+00:00
+-->
