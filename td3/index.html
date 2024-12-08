@@ -85,130 +85,113 @@
 <li>Statistiques : Quatre valeurs pour l'amitié, l'aventure, la bravoure et la popularité.</li>
 </ul>
 <h1 id="b-structure-une_carte">b. Structure <code>une_carte</code></h1>
-<pre><code class="language-c">typedef struct {
-    char nom[50];
-    int numero;
-    int puissance;
-    int amitie;
-    int aventure;
-    int bravoure;
-    int popularite;
-} une_carte;
-</code></pre>
+<p>Structure une_carte
+    nom : chaîne de caractères
+    numero : entier
+    puissance : entier
+    amitie : entier
+    aventure : entier
+    bravoure : entier
+    popularite : entier
+Fin Structure</p>
 <h1 id="c-structure-les_cartes">c. Structure <code>les_cartes</code></h1>
-<pre><code class="language-c">typedef struct {
-    une_carte cartes[135];
-} les_cartes;
-</code></pre>
+<p>Structure les_cartes
+    cartes : tableau de 135 éléments de type une_carte
+Fin Structure</p>
 <h1 id="d-structure-une_collection">d. Structure <code>une_collection</code></h1>
-<pre><code class="language-c">typedef struct {
-    int nb_exemplaires[135];
-    une_carte cartes[135];
-} une_collection;
-</code></pre>
+<p>Structure une_collection
+    nb_exemplaires : tableau de 135 entiers
+    cartes : tableau de 135 éléments de type une_carte
+Fin Structure</p>
 <h1 id="e-procedure-cartes_manquantes">e. Procédure <code>cartes_manquantes</code></h1>
-<pre><code class="language-c">void cartes_manquantes(une_collection collection) {
-    printf(&quot;Cartes manquantes :\n&quot;);
-    for (int i = 0; i &lt; 135; i++) {
-        if (collection.nb_exemplaires[i] == 0) {
-            une_carte carte = collection.cartes[i];
-            printf(&quot;Nom: %s, Numero: %d, Puissance: %d, Amitié: %d, Aventure: %d, Bravoure: %d, Popularité: %d\n&quot;,
-                   carte.nom, carte.numero, carte.puissance, carte.amitie, carte.aventure, carte.bravoure, carte.popularite);
-        }
-    }
-}
-</code></pre>
+<p>Procédure cartes_manquantes(collection : une_collection)
+    Afficher "Cartes manquantes :"
+    Pour i de 0 à 134
+        Si collection.nb_exemplaires[i] = 0 Alors
+            carte &lt;- collection.cartes[i]
+            Afficher "Nom: ", carte.nom, ", Numero: ", carte.numero, ", Puissance: ", carte.puissance, ", Amitié: ", carte.amitie, ", Aventure: ", carte.aventure, ", Bravoure: ", carte.bravoure, ", Popularité: ", carte.popularite
+        Fin Si
+    Fin Pour
+Fin Procédure</p>
 <h1 id="f-fonction-exemplaires_multiples">f. Fonction <code>exemplaires_multiples</code></h1>
-<pre><code class="language-c">int exemplaires_multiples(une_collection collection) {
-    int count = 0;
-    for (int i = 0; i &lt; 135; i++) {
-        if (collection.nb_exemplaires[i] &gt; 1) {
-            count++;
-        }
-    }
-    return count;
-}
-</code></pre>
+<p>Fonction exemplaires_multiples(collection : une_collection) : entier
+    count &lt;- 0
+    Pour i de 0 à 134
+        Si collection.nb_exemplaires[i] &gt; 1 Alors
+            count &lt;- count + 1
+        Fin Si
+    Fin Pour
+    Retourner count
+Fin Fonction</p>
 <h1 id="g-fonction-collection_complete">g. Fonction <code>collection_complete</code></h1>
-<pre><code class="language-c">int collection_complete(une_collection collection) {
-    for (int i = 0; i &lt; 135; i++) {
-        if (collection.nb_exemplaires[i] == 0) {
-            return 0; // Collection non complète
-        }
-    }
-    return 1; // Collection complète
-}
-</code></pre>
+<p>Fonction collection_complete(collection : une_collection) : entier
+    Pour i de 0 à 134
+        Si collection.nb_exemplaires[i] = 0 Alors
+            Retourner 0 // Collection non complète
+        Fin Si
+    Fin Pour
+    Retourner 1 // Collection complète
+Fin Fonction</p>
 <h1 id="h-fonction-recherche_carte">h. Fonction <code>recherche_carte</code></h1>
-<pre><code class="language-c">int recherche_carte(une_collection collection, char *nom) {
-    for (int i = 0; i &lt; 135; i++) {
-        if (strcmp(collection.cartes[i].nom, nom) == 0) {
-            return i;
-        }
-    }
-    return -1; // Carte non trouvée
-}
-</code></pre>
+<p>Fonction recherche_carte(collection : une_collection, nom : chaîne de caractères) : entier
+    Pour i de 0 à 134
+        Si collection.cartes[i].nom = nom Alors
+            Retourner i
+        Fin Si
+    Fin Pour
+    Retourner -1 // Carte non trouvée
+Fin Fonction</p>
 <h1 id="i-procedure-reunir_collections">i. Procédure <code>reunir_collections</code></h1>
-<pre><code class="language-c">void reunir_collections(une_collection *c1, une_collection c2) {
-    for (int i = 0; i &lt; 135; i++) {
-        c1-&gt;nb_exemplaires[i] += c2.nb_exemplaires[i];
-    }
-}
-</code></pre>
+<p>Procédure reunir_collections(c1 : Référence une_collection, c2 : une_collection)
+    Pour i de 0 à 134
+        c1.nb_exemplaires[i] &lt;- c1.nb_exemplaires[i] + c2.nb_exemplaires[i]
+    Fin Pour
+Fin Procédure</p>
 <h1 id="j-structure-une_pochette">j. Structure <code>une_pochette</code></h1>
-<pre><code class="language-c">typedef struct {
-    int numeros[3]; // Numéros des cartes dans la pochette
-} une_pochette;
-</code></pre>
+<p>Structure une_pochette
+    numeros : tableau de 3 entiers
+Fin Structure</p>
 <h1 id="k-procedure-ajout_pochette">k. Procédure <code>ajout_pochette</code></h1>
-<pre><code class="language-c">void ajout_pochette(une_collection *collection, une_pochette pochette) {
-    for (int i = 0; i &lt; 3; i++) {
-        int num = pochette.numeros[i] - 1;
-        collection-&gt;nb_exemplaires[num]++;
-    }
-}
-</code></pre>
+<p>Procédure ajout_pochette(collection : Référence une_collection, pochette : une_pochette)
+    Pour i de 0 à 2
+        num &lt;- pochette.numeros[i] - 1
+        collection.nb_exemplaires[num] &lt;- collection.nb_exemplaires[num] + 1
+    Fin Pour
+Fin Procédure</p>
 <h1 id="l-procedure-ajout_plusieurs_pochettes">l. Procédure <code>ajout_plusieurs_pochettes</code></h1>
-<pre><code class="language-c">void ajout_plusieurs_pochettes(une_collection *collection, une_pochette pochettes[], int n) {
-    for (int i = 0; i &lt; n; i++) {
-        ajout_pochette(collection, pochettes[i]);
-    }
-}
-</code></pre>
+<p>Procédure ajout_plusieurs_pochettes(collection : Référence une_collection, pochettes : tableau de une_pochette, n : entier)
+    Pour i de 0 à n-1
+        ajout_pochette(collection, pochettes[i])
+    Fin Pour
+Fin Procédure</p>
 <h1 id="m-procedure-retrait_carte">m. Procédure <code>retrait_carte</code></h1>
-<pre><code class="language-c">void retrait_carte(une_collection *collection, int numero) {
-    if (collection-&gt;nb_exemplaires[numero - 1] &gt; 0) {
-        collection-&gt;nb_exemplaires[numero - 1]--;
-    }
-}
-</code></pre>
+<p>Procédure retrait_carte(collection : Référence une_collection, numero : entier)
+    Si collection.nb_exemplaires[numero - 1] &gt; 0 Alors
+        collection.nb_exemplaires[numero - 1] &lt;- collection.nb_exemplaires[numero - 1] - 1
+    Fin Si
+Fin Procédure</p>
 <h1 id="n-fonction-comparaison_collections">n. Fonction <code>comparaison_collections</code></h1>
-<pre><code class="language-c">int comparaison_collections(une_collection c1, une_collection c2) {
-    for (int i = 0; i &lt; 135; i++) {
-        if ((c1.nb_exemplaires[i] &gt; 0 &amp;&amp; c2.nb_exemplaires[i] == 0) ||
-            (c1.nb_exemplaires[i] == 0 &amp;&amp; c2.nb_exemplaires[i] &gt; 0)) {
-            return 0; // Différentes
-        }
-    }
-    return 1; // Identiques
-}
-</code></pre>
+<p>Fonction comparaison_collections(c1 : une_collection, c2 : une_collection) : entier
+    Pour i de 0 à 134
+        Si (c1.nb_exemplaires[i] &gt; 0 et c2.nb_exemplaires[i] = 0) ou (c1.nb_exemplaires[i] = 0 et c2.nb_exemplaires[i] &gt; 0) Alors
+            Retourner 0 // Différentes
+        Fin Si
+    Fin Pour
+    Retourner 1 // Identiques
+Fin Fonction</p>
 <h1 id="o-fonction-verification_faisabilite_echange">o. Fonction <code>verification_faisabilite_echange</code></h1>
-<pre><code class="language-c">int verification_faisabilite_echange(une_collection c1, une_collection c2, int num1, int num2) {
-    return c1.nb_exemplaires[num1 - 1] &gt; 1 &amp;&amp; c2.nb_exemplaires[num2 - 1] &gt; 1;
-}
-</code></pre>
+<p>Fonction verification_faisabilite_echange(c1 : une_collection, c2 : une_collection, num1 : entier, num2 : entier) : entier
+    Retourner c1.nb_exemplaires[num1 - 1] &gt; 1 et c2.nb_exemplaires[num2 - 1] &gt; 1
+Fin Fonction</p>
 <h1 id="p-procedure-echange_cartes">p. Procédure <code>echange_cartes</code></h1>
-<pre><code class="language-c">void echange_cartes(une_collection *c1, une_collection *c2, int num1, int num2) {
-    if (verification_faisabilite_echange(*c1, *c2, num1, num2)) {
-        c1-&gt;nb_exemplaires[num1 - 1]--;
-        c2-&gt;nb_exemplaires[num2 - 1]--;
-        c1-&gt;nb_exemplaires[num2 - 1]++;
-        c2-&gt;nb_exemplaires[num1 - 1]++;
-    }
-}
-</code></pre>
+<p>Procédure echange_cartes(c1 : Référence une_collection, c2 : Référence une_collection, num1 : entier, num2 : entier)
+    Si verification_faisabilite_echange(c1, c2, num1, num2) Alors
+        c1.nb_exemplaires[num1 - 1] &lt;- c1.nb_exemplaires[num1 - 1] - 1
+        c2.nb_exemplaires[num2 - 1] &lt;- c2.nb_exemplaires[num2 - 1] - 1
+        c1.nb_exemplaires[num2 - 1] &lt;- c1.nb_exemplaires[num2 - 1] + 1
+        c2.nb_exemplaires[num1 - 1] &lt;- c2.nb_exemplaires[num1 - 1] + 1
+    Fin Si
+Fin Procédure</p>
               
             </div>
           </div><footer>
