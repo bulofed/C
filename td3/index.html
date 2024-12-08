@@ -85,7 +85,7 @@
 <li>Statistiques : Quatre valeurs pour l'amitié, l'aventure, la bravoure et la popularité.</li>
 </ul>
 <h1 id="b-structure-une_carte">b. Structure <code>une_carte</code></h1>
-<p>Structure une_carte
+<pre><code>Structure une_carte
     nom : chaîne de caractères
     numero : entier
     puissance : entier
@@ -93,28 +93,32 @@
     aventure : entier
     bravoure : entier
     popularite : entier
-Fin Structure</p>
+Fin Structure
+</code></pre>
 <h1 id="c-structure-les_cartes">c. Structure <code>les_cartes</code></h1>
-<p>Structure les_cartes
+<pre><code>Structure les_cartes
     cartes : tableau de 135 éléments de type une_carte
-Fin Structure</p>
+Fin Structure
+</code></pre>
 <h1 id="d-structure-une_collection">d. Structure <code>une_collection</code></h1>
-<p>Structure une_collection
+<pre><code>Structure une_collection
     nb_exemplaires : tableau de 135 entiers
     cartes : tableau de 135 éléments de type une_carte
-Fin Structure</p>
+Fin Structure
+</code></pre>
 <h1 id="e-procedure-cartes_manquantes">e. Procédure <code>cartes_manquantes</code></h1>
-<p>Procédure cartes_manquantes(collection : une_collection)
-    Afficher "Cartes manquantes :"
+<pre><code>Procédure cartes_manquantes(collection : une_collection)
+    Afficher &quot;Cartes manquantes :&quot;
     Pour i de 0 à 134
         Si collection.nb_exemplaires[i] = 0 Alors
             carte &lt;- collection.cartes[i]
-            Afficher "Nom: ", carte.nom, ", Numero: ", carte.numero, ", Puissance: ", carte.puissance, ", Amitié: ", carte.amitie, ", Aventure: ", carte.aventure, ", Bravoure: ", carte.bravoure, ", Popularité: ", carte.popularite
+            Afficher &quot;Nom: &quot;, carte.nom, &quot;, Numero: &quot;, carte.numero, &quot;, Puissance: &quot;, carte.puissance, &quot;, Amitié: &quot;, carte.amitie, &quot;, Aventure: &quot;, carte.aventure, &quot;, Bravoure: &quot;, carte.bravoure, &quot;, Popularité: &quot;, carte.popularite
         Fin Si
     Fin Pour
-Fin Procédure</p>
+Fin Procédure
+</code></pre>
 <h1 id="f-fonction-exemplaires_multiples">f. Fonction <code>exemplaires_multiples</code></h1>
-<p>Fonction exemplaires_multiples(collection : une_collection) : entier
+<pre><code>Fonction exemplaires_multiples(collection : une_collection) : entier
     count &lt;- 0
     Pour i de 0 à 134
         Si collection.nb_exemplaires[i] &gt; 1 Alors
@@ -122,76 +126,87 @@ Fin Procédure</p>
         Fin Si
     Fin Pour
     Retourner count
-Fin Fonction</p>
+Fin Fonction
+</code></pre>
 <h1 id="g-fonction-collection_complete">g. Fonction <code>collection_complete</code></h1>
-<p>Fonction collection_complete(collection : une_collection) : entier
+<pre><code>Fonction collection_complete(collection : une_collection) : entier
     Pour i de 0 à 134
         Si collection.nb_exemplaires[i] = 0 Alors
             Retourner 0 // Collection non complète
         Fin Si
     Fin Pour
     Retourner 1 // Collection complète
-Fin Fonction</p>
+Fin Fonction
+</code></pre>
 <h1 id="h-fonction-recherche_carte">h. Fonction <code>recherche_carte</code></h1>
-<p>Fonction recherche_carte(collection : une_collection, nom : chaîne de caractères) : entier
+<pre><code>Fonction recherche_carte(collection : une_collection, nom : chaîne de caractères) : entier
     Pour i de 0 à 134
         Si collection.cartes[i].nom = nom Alors
             Retourner i
         Fin Si
     Fin Pour
     Retourner -1 // Carte non trouvée
-Fin Fonction</p>
+Fin Fonction
+</code></pre>
 <h1 id="i-procedure-reunir_collections">i. Procédure <code>reunir_collections</code></h1>
-<p>Procédure reunir_collections(c1 : Référence une_collection, c2 : une_collection)
+<pre><code>Procédure reunir_collections(c1 : Référence une_collection, c2 : une_collection)
     Pour i de 0 à 134
         c1.nb_exemplaires[i] &lt;- c1.nb_exemplaires[i] + c2.nb_exemplaires[i]
     Fin Pour
-Fin Procédure</p>
+Fin Procédure
+</code></pre>
 <h1 id="j-structure-une_pochette">j. Structure <code>une_pochette</code></h1>
-<p>Structure une_pochette
+<pre><code>Structure une_pochette
     numeros : tableau de 3 entiers
-Fin Structure</p>
+Fin Structure
+</code></pre>
 <h1 id="k-procedure-ajout_pochette">k. Procédure <code>ajout_pochette</code></h1>
-<p>Procédure ajout_pochette(collection : Référence une_collection, pochette : une_pochette)
+<pre><code>Procédure ajout_pochette(collection : Référence une_collection, pochette : une_pochette)
     Pour i de 0 à 2
         num &lt;- pochette.numeros[i] - 1
         collection.nb_exemplaires[num] &lt;- collection.nb_exemplaires[num] + 1
     Fin Pour
-Fin Procédure</p>
+Fin Procédure
+</code></pre>
 <h1 id="l-procedure-ajout_plusieurs_pochettes">l. Procédure <code>ajout_plusieurs_pochettes</code></h1>
-<p>Procédure ajout_plusieurs_pochettes(collection : Référence une_collection, pochettes : tableau de une_pochette, n : entier)
+<pre><code>Procédure ajout_plusieurs_pochettes(collection : Référence une_collection, pochettes : tableau de une_pochette, n : entier)
     Pour i de 0 à n-1
         ajout_pochette(collection, pochettes[i])
     Fin Pour
-Fin Procédure</p>
+Fin Procédure
+</code></pre>
 <h1 id="m-procedure-retrait_carte">m. Procédure <code>retrait_carte</code></h1>
-<p>Procédure retrait_carte(collection : Référence une_collection, numero : entier)
+<pre><code>Procédure retrait_carte(collection : Référence une_collection, numero : entier)
     Si collection.nb_exemplaires[numero - 1] &gt; 0 Alors
         collection.nb_exemplaires[numero - 1] &lt;- collection.nb_exemplaires[numero - 1] - 1
     Fin Si
-Fin Procédure</p>
+Fin Procédure
+</code></pre>
 <h1 id="n-fonction-comparaison_collections">n. Fonction <code>comparaison_collections</code></h1>
-<p>Fonction comparaison_collections(c1 : une_collection, c2 : une_collection) : entier
+<pre><code>Fonction comparaison_collections(c1 : une_collection, c2 : une_collection) : entier
     Pour i de 0 à 134
         Si (c1.nb_exemplaires[i] &gt; 0 et c2.nb_exemplaires[i] = 0) ou (c1.nb_exemplaires[i] = 0 et c2.nb_exemplaires[i] &gt; 0) Alors
             Retourner 0 // Différentes
         Fin Si
     Fin Pour
     Retourner 1 // Identiques
-Fin Fonction</p>
+Fin Fonction
+</code></pre>
 <h1 id="o-fonction-verification_faisabilite_echange">o. Fonction <code>verification_faisabilite_echange</code></h1>
-<p>Fonction verification_faisabilite_echange(c1 : une_collection, c2 : une_collection, num1 : entier, num2 : entier) : entier
+<pre><code>Fonction verification_faisabilite_echange(c1 : une_collection, c2 : une_collection, num1 : entier, num2 : entier) : entier
     Retourner c1.nb_exemplaires[num1 - 1] &gt; 1 et c2.nb_exemplaires[num2 - 1] &gt; 1
-Fin Fonction</p>
+Fin Fonction
+</code></pre>
 <h1 id="p-procedure-echange_cartes">p. Procédure <code>echange_cartes</code></h1>
-<p>Procédure echange_cartes(c1 : Référence une_collection, c2 : Référence une_collection, num1 : entier, num2 : entier)
+<pre><code>Procédure echange_cartes(c1 : Référence une_collection, c2 : Référence une_collection, num1 : entier, num2 : entier)
     Si verification_faisabilite_echange(c1, c2, num1, num2) Alors
         c1.nb_exemplaires[num1 - 1] &lt;- c1.nb_exemplaires[num1 - 1] - 1
         c2.nb_exemplaires[num2 - 1] &lt;- c2.nb_exemplaires[num2 - 1] - 1
         c1.nb_exemplaires[num2 - 1] &lt;- c1.nb_exemplaires[num2 - 1] + 1
         c2.nb_exemplaires[num1 - 1] &lt;- c2.nb_exemplaires[num1 - 1] + 1
     Fin Si
-Fin Procédure</p>
+Fin Procédure
+</code></pre>
               
             </div>
           </div><footer>
